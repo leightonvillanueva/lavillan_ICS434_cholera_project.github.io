@@ -24,9 +24,10 @@
         </div>
     </div>
 
+
     <script>
     function makeplot() {
-        Plotly.d3.tsv("choleraDeaths.tsv", function(data){ processData(data) } );
+        Plotly.d3.tsv("/choleraDeaths.tsv", function(data){ processData(data) } );
     };
 
     function processData(allRows) {
