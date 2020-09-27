@@ -26,7 +26,7 @@
 
     <script>
     function makeplot() {
-        Plotly.d3.csv("lavillan_ICS434_cholera_project.github.io/Cholera/choleraDeaths.tsv", function(data){ processData(data) } );
+        Plotly.d3.tsv("choleraDeaths.tsv", function(data){ processData(data) } );
     };
 
     function processData(allRows) {
