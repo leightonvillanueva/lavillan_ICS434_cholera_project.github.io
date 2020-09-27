@@ -26,9 +26,9 @@
 
 
     <script>
-    function makeplot() {
-        Plotly.d3.tsv("/choleraDeaths.tsv").then(function(data){console.log(data[0]) });
-    };
+   
+    Plotly.d3.tsv("/choleraDeaths.tsv").then(function(data){console.log(data[0]) });
+
 
 //     function processData(allRows) {
 
@@ -53,8 +53,6 @@
 // 	Plotly.newPlot('c_plot', traces, 
 // 		{title: 'Cholera'});
 // };
-
-makeplot();
 
 </script>
 </body>
