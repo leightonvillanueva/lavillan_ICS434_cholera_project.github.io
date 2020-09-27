@@ -1,6 +1,6 @@
 ## Welcome to GitHub Pages
 
-Hosted at: https://leightonvillanueva.github.io/lavillan_ICS434_cholera_project.github.io/
+Hosted at: https://leightonvillanueva.github.io/lavillan_ICS484_cholera_project.github.io/
 
 You can use the [editor on GitHub](https://github.com/leightonvillanueva/lavillan_ICS434_cholera_project.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
