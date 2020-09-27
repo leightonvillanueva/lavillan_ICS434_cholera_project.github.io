@@ -30,7 +30,7 @@
     Plotly.d3.tsv("./choleraDeaths.tsv", function(err, rows) {
 
     function unpack(rows, key) {
-    return rows.map(function(row) { return row[key]; });
+        return rows.map(function(row) { return row[key]; });
     }
 
     var headerNames = Plotly.d3.keys(rows[0]);
@@ -44,19 +44,26 @@
         cellValues[i] = cellValue;
     }
 
-    // clean date
+    cosole.log(cellValues);
+
+    // for (j = 0; j < cellValues.length; j++) {
+         
+    // }
+
+    headerValues[3] ="Total Attacks and Deaths per Day";
+
+
+    // clean dates
     for (i = 0; i < cellValues[1].length; i++) {
         var dateValue = cellValues[1][i].split(' ')[0]
         cellValues[1][i] = dateValue
     }
     
-    headerValues[3] ="Total Attacks and Deaths per Day";
-    
 
     var data = [{
     type: 'table',
     columnorder: [0,1,2,3],
-    columnwidth: [150,600,1000,900],
+    columnwidth: [200,500,500,500],
     header: {
     values: headerValues,
     align: "center",
