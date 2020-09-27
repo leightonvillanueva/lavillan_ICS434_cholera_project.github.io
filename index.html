@@ -64,7 +64,7 @@
         }
     }
 
-    // switch to year month date format
+    //switch to year month date format
     for (l = 0; l < 42; l++) {
         var dateValue = cellValues[0][l].split('-');
         var holder = dateValue[0];
@@ -73,12 +73,10 @@
         cellValues[0][l] = dateValue.join('-');
     }
 
-    
-
     var table = [{
         type: 'table',
         columnorder: [0,1,2,3],
-        columnwidth: [500,300,300,300],
+        columnwidth: [300,300,300,300],
         header: {
         values: headerValues,
         align: "center",
