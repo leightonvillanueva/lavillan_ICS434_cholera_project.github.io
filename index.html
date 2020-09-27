@@ -37,7 +37,7 @@
 
     var headerValues = [];
     var cellValues = [];
-    for (i = 0; i < headerNames.length; i++) {
+    for (i = 0; i < 4; i++) {
         headerValue = [headerNames[i]];
         headerValues[i] = headerValue;
         cellValue = unpack(rows, headerNames[i]);
@@ -50,7 +50,7 @@
         cellValues[1][i] = dateValue
     }
     
-    headerValues.concat["Total Attacks and Deaths per Day"];
+    headerValues[4] ="Total Attacks and Deaths per Day";
     
 
     var data = [{
