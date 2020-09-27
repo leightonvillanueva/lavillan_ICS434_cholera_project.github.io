@@ -96,18 +96,18 @@
 
     }]
 
-    var trace3 = [{
+    // var trace3 = [{
 
-        mode: 'lines+markers',
-        name: 'Total Attacks'
+    //     mode: 'lines+markers',
+    //     name: 'Total Attacks'
 
-    }]
+    // }]
 
-    var trace4 = [{
-        mode: 'lines+markers',
-        name: 'Total Deaths'
+    // var trace4 = [{
+    //     mode: 'lines+markers',
+    //     name: 'Total Deaths'
 
-    }]
+    // }]
 
 
     var c_layout = {
@@ -125,11 +125,11 @@
     };
 
 
-    data = [trace1, trace2, trace3, trace4]
+    data = [trace1, trace2];
 
 
     Plotly.newPlot('c_plot', table, c_layout);
-    Plotly.newPlot('line_plot', data, line_layout)
+    Plotly.newPlot('line_plot', data, line_layout);
     });
 
 </script>
