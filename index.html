@@ -27,32 +27,32 @@
 
     <script>
     function makeplot() {
-        Plotly.d3.tsv("/choleraDeaths.tsv", function(data){ processData(data) } );
+        Plotly.d3.tsv("/choleraDeaths.tsv", function(data){console.log(data[0]) } );
     };
 
-    function processData(allRows) {
+//     function processData(allRows) {
 
     
-    var x = [], y = [];
+//     var x = [], y = [];
 
-    for (var i=0; i<43; i++) {
-        row = allRows[i];
-        x.push( row['Date'] );
-        y.push( row['Attack'] );
-    }
-        makePlotly( x, y );
-    }
+//     for (var i=0; i<43; i++) {
+//         row = allRows[i];
+//         x.push( row['Date'] );
+//         y.push( row['Attack'] );
+//     }
+//         makePlotly( x, y );
+//     }
 
-    function makePlotly( x, y ){
-	var plotDiv = document.getElementById("c_plot");
-	var traces = [{
-		x: x, 
-		y: y
-	}];
+//     function makePlotly( x, y ){
+// 	var plotDiv = document.getElementById("c_plot");
+// 	var traces = [{
+// 		x: x, 
+// 		y: y
+// 	}];
 
-	Plotly.newPlot('c_plot', traces, 
-		{title: 'Cholera'});
-};
+// 	Plotly.newPlot('c_plot', traces, 
+// 		{title: 'Cholera'});
+// };
 
 makeplot();
 
