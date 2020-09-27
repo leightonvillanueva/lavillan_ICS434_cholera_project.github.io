@@ -44,11 +44,10 @@
         cellValues[i] = cellValue;
     }
 
-    console.log(cellValues);
+    for (j = 0; j < cellValue[1].length; j++) {
+        cellValues[3][j] = cellValues[1][j] + cellValues[2][j];
+    }
 
-    // for (j = 0; j < cellValues.length; j++) {
-         
-    // }
 
     headerValues[3] ="Total Attacks and Deaths per Day";
 
