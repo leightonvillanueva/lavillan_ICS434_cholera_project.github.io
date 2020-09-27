@@ -80,28 +80,30 @@
         }
     }]
 
-    var trace1 = [{
-        x: cellValues[0],
-        y: cellValues[1],
+    var trace1 = {
+        x: unpack(rows, 'Date'),
+        y: unpack(rows, 'Attacks'),
         mode: 'lines+markers',
-        name: 'Number of Attacks per Day'
+        name: 'Number of Attacks per Day',
+        line: {color: '#17BECF'}
 
-    }]
+    }
 
-    var trace2 = [{
-        x: cellValues[0],
-        y: cellValues[2],
+    var trace2 = {
+        x: unpack(rows, 'Date'),
+        y: unpack(rows, 'Deaths'),
         mode: 'lines+markers',
-        name: 'Number of Deaths per Day'
+        name: 'Number of Deaths per Day',
+        line: {color: '#7F7F7F'}
 
-    }]
+    }
 
-    // var trace3 = [{
+    // var trace3 = {
 
     //     mode: 'lines+markers',
     //     name: 'Total Attacks'
 
-    // }]
+    // }
 
     // var trace4 = [{
     //     mode: 'lines+markers',
@@ -117,10 +119,12 @@
     var line_layout = {
         title:'Cholera',
         xaxis: {
-        title: 'Time'
+        title: 'Time',
+        type: 'date'
         },
         yaxis: {
-            title: 'People Affected'
+            title: '# of People Affected',
+            type: 'linear'
         }
     };
 
