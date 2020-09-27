@@ -54,10 +54,19 @@
     headerValues[3] ="Total Attacks and Deaths per Day";
 
 
-    // clean dates
-    for (i = 0; i < cellValues[1].length; i++) {
-        var dateValue = cellValues[1][i].split(' ')[0]
-        cellValues[1][i] = dateValue
+    // // clean dates
+    // for (i = 0; i < cellValues[1].length; i++) {
+    //     var dateValue = cellValues[1][i].split(' ')[0]
+    //     cellValues[1][i] = dateValue
+    // }
+
+    //clean up dates
+    for (k = 0; k < 42; k++) {
+        if (cellValues[0][k].search('Aug')) {
+            cellValues[0][k] = cellValues[0][k].replace("Aug", "8");
+        } else {
+            cellValues[0][k] = cellValues[0][k].replace("Sep", "9");
+        }
     }
     
     var table = [{
@@ -109,7 +118,7 @@
     //     mode: 'lines+markers',
     //     name: 'Total Deaths'
 
-    // }]
+    // }
 
 
     var c_layout = {
