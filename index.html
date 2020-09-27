@@ -1,7 +1,62 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <!--Script for getting plotly.js in-->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> 
+
+    <!--Leaflet stylesheet and leaflet script-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>    
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <div id="thevizcolumn" style="width:80%; height:400px; float: left; background-color:rgb(247, 200, 224);">
+        <p>Cholera</p>
+        <div style="width:50%; height:400px; float: left">
+        <div id="c_plot" style="width:100%;height:300px;" ></div>
+        </div>
+        </div>
+
+
+    <script>
+    function makeplot() {
+        Plotly.d3.tsv("choleraDeaths.tsv", function(data){ processData(data) } );
+    };
+
+    function processData(allRows) {
+
+    
+    var x = [], y = [];
+
+    for (var i=0; i<allRows.length; i++) {
+    row = allRows[i];
+    x.push( row['Date'] );
+    y.push( row['Attack'] );
+    }
+    makePlotly( x, y );
+    }
+
+
+
+    function makePlotly( x, y ){
+	var plotDiv = document.getElementById("c_plot");
+	var traces = [{
+		x: x, 
+		y: y
+	}];
+
+	Plotly.newPlot('myDiv', traces, 
+		{title: 'Cholera'});
+};
+  makeplot();
+
+    </script>
 </body>
 </html>
