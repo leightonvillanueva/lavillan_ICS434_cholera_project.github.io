@@ -38,25 +38,27 @@
     var headerValues = [];
     var cellValues = [];
     for (i = 0; i < headerNames.length; i++) {
-    headerValue = [headerNames[i]];
-    headerValues[i] = headerValue;
-    cellValue = unpack(rows, headerNames[i]);
-    cellValues[i] = cellValue;
+        headerValue = [headerNames[i]];
+        headerValues[i] = headerValue;
+        cellValue = unpack(rows, headerNames[i]);
+        cellValues[i] = cellValue;
     }
 
     // clean date
     for (i = 0; i < cellValues[1].length; i++) {
-    var dateValue = cellValues[1][i].split(' ')[0]
-    cellValues[1][i] = dateValue
+        var dateValue = cellValues[1][i].split(' ')[0]
+        cellValues[1][i] = dateValue
     }
-
+    
+    headerValues.concat["Total Attacks and Deaths per Day"];
+    
 
     var data = [{
     type: 'table',
     columnorder: [0,1,2,3],
     columnwidth: [150,600,1000,900],
     header: {
-    values: [headerValues, "Total Attacks and Deaths per Day"],
+    values: headerValues,
     align: "center",
     line: {width: 1, color: 'rgb(50, 50, 50)'},
     fill: {color: ['rgb(220, 240, 100)']},
@@ -64,7 +66,7 @@
     },
     cells: {
     values: cellValues,
-    align: ["center", "center"],
+    align: ["center", "center", "center"],
     line: {color: "black", width: 1},
     fill: {color: ['rgba(102, 219, 240, 0.65)','rgb(240, 102, 219)', 'rgba(220, 240, 100, 0.65)']},
     font: {family: "Arial", size: 8, color: ["black"]}
