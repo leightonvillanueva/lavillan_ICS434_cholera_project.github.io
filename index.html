@@ -79,6 +79,13 @@
     for (m = 1; m < 42; m++) {
         attacks_cumm[m] = attacks_cumm[m-1] + parseInt(cellValues[1][m]);
     }
+
+    var deaths_cumm = [];
+    deaths_cumm[0] = 0;
+    //create total attacks cumulatively per day
+    for (n = 1; n < 42; n++) {
+        deaths_cumm[n] = deaths_cumm[n-1] + parseInt(cellValues[1][n]);
+    }
     
 
     var table = [{
@@ -115,7 +122,7 @@
         y: cellValues[2],
         mode: 'lines+markers',
         name: 'Number of Deaths per Day',
-        line: {color: '#7F7F7F'}
+        line: {color: '#17cf57'}
 
     }
 
@@ -123,15 +130,19 @@
         x: cellValues[0],
         y: attacks_cumm,
         mode: 'lines+markers',
-        name: 'Total Attacks'
+        name: 'Total Attacks',
+        line: {color: '#1732cf'}
 
     }
 
-    // var trace4 = [{
-    //     mode: 'lines+markers',
-    //     name: 'Total Deaths'
+    var trace4 = {
+        x: cellValues[0],
+        y: deaths_cumm,
+        mode: 'lines+markers',
+        name: 'Total Deaths',
+        line: {color: '#cf2917'}
 
-    // }
+    }
 
 
     var c_layout = {
