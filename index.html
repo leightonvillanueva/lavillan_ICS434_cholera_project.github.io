@@ -47,7 +47,7 @@
         cellValues[i] = cellValue;
     }
 
-    for (j = 0; j < 43; j++) {
+    for (j = 0; j < 42; j++) {
         cellValues[3][j] = parseInt(cellValues[1][j]) + parseInt(cellValues[2][j]);
     }
 
@@ -61,7 +61,7 @@
     // }
 
     //clean up dates
-    for (k = 0; k < 43; k++) {
+    for (k = 0; k < 42; k++) {
         if (cellValues[0][k].search('Aug')) {
             cellValues[0][k] = cellValues[0][k].replace("Aug", "8");
         }
