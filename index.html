@@ -108,6 +108,7 @@
         }
     }]
 
+    //
     var trace1 = {
         x: cellValues[0],
         y: cellValues[1],
@@ -144,9 +145,8 @@
 
     }
 
-
     var c_layout = {
-        title: "Cholera Deaths"
+        title: "Cholera Data"
     }
 
     var line_layout = {
@@ -170,5 +170,15 @@
     });
 
 </script>
+
+
+<button onclick="information()">Information</button>
+
+<script>
+function information() {
+  alert("Visualized by Leighton Villanueva using Plotly.js. Cholera data used for visualizations");
+}
+</script>
+
 </body>
 </html>
