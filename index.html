@@ -32,29 +32,28 @@
     function processData(allRows) {
 
 	console.log(allRows);
-	var x = [], y = [];
+	var attack = [], date = [], death = [];
 
 	for (var i=0; i<allRows.length; i++) {
 		row = allRows[i];
-		x.push( row['AAPL_x'] );
-		y.push( row['AAPL_y'] );
+		attack.push( row['Attack'] );
+		date.push( row['Date'] );
+        death.push( row['Death'] );
 	}
-	console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
-	makePlotly( x, y, standard_deviation );
+	console.log( 'Attack', attack, 'Date', date, 'Death', death );
+	makePlotly( attack, date, death );
 }
 
-function makePlotly( x, y, standard_deviation ){
-	var plotDiv = document.getElementById("plot");
+function makePlotly( attack, date, death  ){
+	var plotDiv = document.getElementById("c_plot");
 	var traces = [{
-		x: x, 
-		y: y
+		date: date, 
+		attack: attack
 	}];
 
-	Plotly.newPlot('myDiv', traces, 
-		{title: 'Plotting CSV data from AJAX call'});
+	Plotly.newPlot('c_plot', traces, 
+		{title: 'Test'});
 };
-  makeplot();
-
 
 </script>
 </body>
