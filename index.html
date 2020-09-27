@@ -96,8 +96,8 @@
     }]
 
     var trace1 = {
-        x: unpack(rows, 'Date'),
-        y: unpack(rows, 'Attacks'),
+        x: cellValues[0],
+        y: cellValues[1],
         mode: 'lines+markers',
         name: 'Number of Attacks per Day',
         line: {color: '#17BECF'}
@@ -105,8 +105,8 @@
     }
 
     var trace2 = {
-        x: unpack(rows, 'Date'),
-        y: unpack(rows, 'Deaths'),
+        x: cellValues[0],
+        y: cellValues[2],
         mode: 'lines+markers',
         name: 'Number of Deaths per Day',
         line: {color: '#7F7F7F'}
