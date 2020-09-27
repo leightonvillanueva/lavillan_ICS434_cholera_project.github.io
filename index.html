@@ -22,12 +22,11 @@
         <div style="width:50%; height:400px; float: left">
         <div id="c_plot" style="width:100%;height:300px;" ></div>
         </div>
-        </div>
-
+    </div>
 
     <script>
     function makeplot() {
-        Plotly.d3.tsv("choleraDeaths.tsv", function(data){ processData(data) } );
+        Plotly.d3.tsv("Cholera/choleraDeaths.tsv", function(data){ processData(data) } );
     };
 
     function processData(allRows) {
@@ -36,14 +35,12 @@
     var x = [], y = [];
 
     for (var i=0; i<allRows.length; i++) {
-    row = allRows[i];
-    x.push( row['Date'] );
-    y.push( row['Attack'] );
+        row = allRows[i];
+        x.push( row['Date'] );
+        y.push( row['Attack'] );
     }
-    makePlotly( x, y );
+        makePlotly( x, y );
     }
-
-
 
     function makePlotly( x, y ){
 	var plotDiv = document.getElementById("c_plot");
@@ -55,8 +52,9 @@
 	Plotly.newPlot('myDiv', traces, 
 		{title: 'Cholera'});
 };
-  makeplot();
 
-    </script>
+makeplot();
+
+</script>
 </body>
 </html>
