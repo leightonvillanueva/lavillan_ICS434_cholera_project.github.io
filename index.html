@@ -28,33 +28,33 @@
     <script>
    
     Plotly.d3.tsv("./choleraDeaths.tsv", function(data) {processData(data)});
-
-
+    
     function processData(allRows) {
 
-    
-    var x = [], y = [];
+	console.log(allRows);
+	var x = [], y = [];
 
-    for (var i=0; i<43; i++) {
-        row = allRows[i];
-        x.push( row['Date'] );
-        y.push( row['Attack'] );
-    }
-        makePlotly( x, y );
-    }
+	for (var i=0; i<allRows.length; i++) {
+		row = allRows[i];
+		x.push( row['AAPL_x'] );
+		y.push( row['AAPL_y'] );
+	}
+	console.log( 'X',x, 'Y',y, 'SD',standard_deviation );
+	makePlotly( x, y, standard_deviation );
+}
 
-    function makePlotly( x, y ){
-	var plotDiv = document.getElementById("c_plot");
+function makePlotly( x, y, standard_deviation ){
+	var plotDiv = document.getElementById("plot");
 	var traces = [{
 		x: x, 
 		y: y
 	}];
 
-	Plotly.newPlot('c_plot', traces, 
-		{title: 'Cholera'});
+	Plotly.newPlot('myDiv', traces, 
+		{title: 'Plotting CSV data from AJAX call'});
 };
+  makeplot();
 
-makeplot();
 
 </script>
 </body>
