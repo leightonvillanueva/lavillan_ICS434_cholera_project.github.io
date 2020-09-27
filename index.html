@@ -64,10 +64,13 @@
         }
     }
 
-    // clean dates
-    for (l = 0; l < cellValues[1].length; l++) {
-        var dateValue = cellValues[1][l].split('-')[0];
-        cellValues[1][i] = dateValue;
+    // switch to year month date format
+    for (l = 0; l < 42; l++) {
+        var dateValue = cellValues[0][l].split('-');
+        var holder = dateValue[0];
+        dateValue[0] = dateValue[2];
+        dateValue[2] = holder;
+        cellValues[0][l] = dateValue.join('-');
     }
 
     
