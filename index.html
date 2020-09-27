@@ -73,6 +73,13 @@
         cellValues[0][l] = dateValue.join('-');
     }
 
+    var attacks_cumm = [0];
+    //create total attacks cumulatively per day
+    for (m = 0; m < 42; m++) {
+        attacks_cumm[m] = attacks_cumm[m] + parseInt(cellValues[1][m]);
+    }
+    
+
     var table = [{
         type: 'table',
         columnorder: [0,1,2,3],
@@ -88,7 +95,7 @@
         values: cellValues,
         align: ["center", "center", "center"],
         line: {color: "black", width: 1},
-        fill: {color: ['rgb(102, 219, 240)','rgb(240, 102, 219)', 'rgb(220, 240, 100)', 'rgb(240, 157, 102)' ]},
+        fill: {color: ['rgb(102, 219, 240)','rgb(240, 102, 219)', 'rgb(220, 240, 100)', 'rgb(240, 157, 102)']},
         font: {family: "Arial", size: 8, color: ["black"]}
         }
     }]
@@ -111,12 +118,13 @@
 
     }
 
-    // var trace3 = {
+    var trace3 = {
+        x: cellValues[0],
+        y: attacks_cumm,
+        mode: 'lines+markers',
+        name: 'Total Attacks'
 
-    //     mode: 'lines+markers',
-    //     name: 'Total Attacks'
-
-    // }
+    }
 
     // var trace4 = [{
     //     mode: 'lines+markers',
@@ -142,12 +150,11 @@
         }
     };
 
-
-    data = [trace1, trace2];
-
+    data = [trace1, trace2, trace3];
 
     Plotly.newPlot('c_plot', table, c_layout);
     Plotly.newPlot('line_plot', data, line_layout);
+
     });
 
 </script>
