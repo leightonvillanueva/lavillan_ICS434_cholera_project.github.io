@@ -73,7 +73,8 @@
         cellValues[0][l] = dateValue.join('-');
     }
 
-    var attacks_cumm = [0];
+    var attacks_cumm = [];
+    attacks_cumm[0] = 0;
     //create total attacks cumulatively per day
     for (m = 0; m < 42; m++) {
         attacks_cumm[m] = attacks_cumm[m] + parseInt(cellValues[1][m]);
