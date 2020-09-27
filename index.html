@@ -17,10 +17,13 @@
 
 <body>
 
-    <div id="thevizcolumn" style="width:80%; height:400px; float: left; background-color:rgb(255, 255, 255);">
+    <div id="thevizcolumn" style="width:80%; height:800px; float: left; background-color:rgb(255, 255, 255);">
         <p>Cholera</p>
-        <div style="width:50%; height:400px; float: left">
-        <div id="c_plot" style="width:100%;height:300px;" ></div>
+        <div style="width:50%; height:700px; float: left">
+        <div id="c_plot" style="width:100%;height:600px;" ></div>
+        </div>
+        <div style="width:50%; height:700px; float: left">
+        <div id="line_plot" style="width:100%;height:600px;" ></div>
         </div>
     </div>
 
@@ -48,7 +51,6 @@
         cellValues[3][j] = parseInt(cellValues[1][j]) + parseInt(cellValues[2][j]);
     }
 
-
     headerValues[3] ="Total Attacks and Deaths per Day";
 
 
@@ -58,32 +60,76 @@
         cellValues[1][i] = dateValue
     }
     
-
-    var data = [{
-    type: 'table',
-    columnorder: [0,1,2,3],
-    columnwidth: [500,300,300,300],
-    header: {
-    values: headerValues,
-    align: "center",
-    line: {width: 1, color: 'rgb(50, 50, 50)'},
-    fill: {color: ['rgb(255, 255, 255)']},
-    font: {family: "Arial", size: 8, color: ["black"]}
-    },
-    cells: {
-    values: cellValues,
-    align: ["center", "center", "center"],
-    line: {color: "black", width: 1},
-    fill: {color: ['rgb(102, 219, 240)','rgb(240, 102, 219)', 'rgb(220, 240, 100)', 'rgb(240, 157, 102)' ]},
-    font: {family: "Arial", size: 8, color: ["black"]}
-    }
+    var table = [{
+        type: 'table',
+        columnorder: [0,1,2,3],
+        columnwidth: [500,300,300,300],
+        header: {
+        values: headerValues,
+        align: "center",
+        line: {width: 1, color: 'rgb(50, 50, 50)'},
+        fill: {color: ['rgb(255, 255, 255)']},
+        font: {family: "Arial", size: 8, color: ["black"]}
+        },
+        cells: {
+        values: cellValues,
+        align: ["center", "center", "center"],
+        line: {color: "black", width: 1},
+        fill: {color: ['rgb(102, 219, 240)','rgb(240, 102, 219)', 'rgb(220, 240, 100)', 'rgb(240, 157, 102)' ]},
+        font: {family: "Arial", size: 8, color: ["black"]}
+        }
     }]
 
-    var layout = {
-    title: "Cholera Deaths"
+    var trace1 = [{
+        x: cellValues[0],
+        y: cellValues[1],
+        mode: 'lines+markers',
+        name: 'Number of Attacks per Day'
+
+    }]
+
+    var trace2 = [{
+        x: cellValues[0],
+        y: cellValues[2],
+        mode: 'lines+markers',
+        name: 'Number of Deaths per Day'
+
+    }]
+
+    var trace2 = [{
+
+        mode: 'lines+markers',
+        name: 'Total Attacks'
+
+    }]
+
+    var trace2 = [{
+        mode: 'lines+markers',
+        name: 'Total Deaths'
+
+    }]
+
+
+    var c_layout = {
+        title: "Cholera Deaths"
     }
 
-    Plotly.newPlot('c_plot', data, layout);
+    var line_layout = {
+        title:'Cholera',
+        xaxis: {
+        title: 'Time'
+        },
+        yaxis: {
+            title: 'People Affected'
+        }
+    };
+
+
+    data = [trace1, trace2, trace3, trace4]
+
+
+    Plotly.newPlot('c_plot', table, c_layout);
+    Plotyl.newPlot('line_plot', data, line_layout)
     });
 
 </script>
