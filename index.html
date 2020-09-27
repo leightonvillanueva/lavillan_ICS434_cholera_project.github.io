@@ -47,7 +47,7 @@
         cellValues[i] = cellValue;
     }
 
-    for (j = 0; j < 42; j++) {
+    for (j = 0; j < 43; j++) {
         cellValues[3][j] = parseInt(cellValues[1][j]) + parseInt(cellValues[2][j]);
     }
 
@@ -61,11 +61,11 @@
     // }
 
     //clean up dates
-    for (k = 0; k < 42; k++) {
+    for (k = 0; k < 43; k++) {
         if (cellValues[0][k].search('Aug')) {
             cellValues[0][k] = cellValues[0][k].replace("Aug", "8");
         }
-         
+
         if (cellValues[0][k].search('Sep')) {
             cellValues[0][k] = cellValues[0][k].replace("Sep", "9");
         }
@@ -131,7 +131,7 @@
         title:'Cholera',
         xaxis: {
         title: 'Time',
-        range:  ['19-8-1854', '29-9-1854']
+        range:  ['19-8-1854', '29-9-1854'],
         type: 'date'
         },
         yaxis: {
