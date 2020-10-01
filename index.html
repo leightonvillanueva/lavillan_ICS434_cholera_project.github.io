@@ -169,20 +169,30 @@
 
     });
 
-</script>
+    Plotly.d3.tsv("./naplesCholeraAgeSexData.tsv", function(err, rows) {
 
+    var naplesHeaderNames = Plotly.d3.keys(rows[6]);
 
-<script>
-
-Plotly.d3.tsv("./naplesCholeraAgeSexData.tsv", function(err, rows) {
-
-function unpack(rows, key) {
-    return rows.map(function(row) { return row[key]; });
+    var naplesHeaderValues = [];
+    var naplesCellValues = [];
+    for (i = 0; i < 4; i++) {
+        headerValue = [headerNames[i]];
+        headerValues[i] = headerValue;
+        cellValue = unpack(rows, headerNames[i]);
+        cellValues[i] = cellValue;
 }
 
-var naplesHeaderNames = Plotly.d3.keys(rows[0]);
+
+
 
 </script>
+
+
+
+
+
+
+
 
 
 
