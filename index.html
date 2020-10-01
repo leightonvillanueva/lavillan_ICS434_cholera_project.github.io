@@ -28,6 +28,10 @@
         <div id="line_plot" style="width:100%;height:600px;" ></div>
     </div>
 
+    <div style="width:100%; height:800px; float: left">
+        <div id="naple_line_plot" style="width:100%;height:600px;" ></div>
+    </div>
+
     <script>
    
     Plotly.d3.tsv("./choleraDeaths.tsv", function(err, rows) {
@@ -164,27 +168,48 @@
 
     data = [trace1, trace2, trace3, trace4];
 
-    Plotly.newPlot('c_plot', table, c_layout);
-    Plotly.newPlot('line_plot', data, line_layout);
-
-    });
-
     Plotly.d3.tsv("./naplesCholeraAgeSexData.tsv", function(err, rows) {
 
-    var naplesHeaderNames = Plotly.d3.keys(rows[6]);
+var naplesHeaderNames = Plotly.d3.keys(rows[6]);
 
-    var naplesHeaderValues = [];
-    var naplesCellValues = [];
-    for (i = 0; i < 4; i++) {
-        headerValue = [headerNames[i]];
-        headerValues[i] = headerValue;
-        cellValue = unpack(rows, headerNames[i]);
-        cellValues[i] = cellValue;
+var naplesHeaderValues = [];
+var naplesCellValues = [];
+for (i = 0; i < 2; i++) {
+    naplesHeaderValue = [naplesHeaderNames[i]];
+    naplesHeaderValues[i] = naplesHeaderValue;
+    napleCellValue = unpack(rows, naplesHeaderNames[i]);
+    naplesCellValues[i] = napleCellValue;
 }
 
+    var naple_table = [{
+        type: 'table',
+            columnorder: [0,1,2,3],
+            columnwidth: [300,300,300,300],
+            header: {
+            values: naplesHeaderValues,
+            align: "center",
+            line: {width: 1, color: 'rgb(50, 50, 50)'},
+            fill: {color: ['rgb(255, 255, 255)']},
+            font: {family: "Arial", size: 8, color: ["black"]}
+        },
+        cells: {
+            values: naplesCellValues,
+            align: ["center", "center", "center"],
+            line: {color: "black", width: 1},
+            fill: {color: ['rgb(102, 219, 240)','rgb(240, 102, 219)', 'rgb(220, 240, 100)', 'rgb(240, 157, 102)']},
+            font: {family: "Arial", size: 8, color: ["black"]}
+        }
+    }]
 
+    var naple_layout = {
+        title: "Cholera Data"
+    }
 
+    Plotly.newPlot('c_plot', table, c_layout);
+    Plotly.newPlot('line_plot', data, line_layout);
+    Plotly.newPlot('naple_line_plot', naple_table, naple_layout);
 
+    });
 </script>
 
 
