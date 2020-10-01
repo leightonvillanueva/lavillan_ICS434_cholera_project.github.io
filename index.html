@@ -182,11 +182,11 @@
         return rows.map(function(row) { return row[key]; });
         }
 
-    var naplesHeaderNames = Plotly.d3.keys(rows[6]);
+    var naplesHeaderNames = Plotly.d3.keys(rows[0]);
 
     var naplesHeaderValues = [];
     var naplesCellValues = [];
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < 3; i++) {
         naplesHeaderValue = [naplesHeaderNames[i]];
         naplesHeaderValues[i] = naplesHeaderValue;
         napleCellValue = unpack(rows, naplesHeaderNames[i]);
