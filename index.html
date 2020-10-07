@@ -17,34 +17,39 @@
 
 <body>
 
-    
+    <button onclick="information()">Information</button>
+
+            
+    <script>
+        function information() {
+            alert("Visualized by Leighton Villanueva using Plotly.js. \nCholera data used for visualizations from: http://www.rtwilson.com/academic/. \nNaples Cholera data from: http://assets.cambridge. For more information on Cholera spread in Naples please visit: https://www.nejm.org/doi/full/10.1056/NEJM199610103351520.");
+        }
+    </script>
+
 
     <div id="thevizcolumn" style="width:100%; height:800px; float: left; background-color:rgb(255, 255, 255);">
-        <button onclick="information()">Information</button>
-
-        <script>
-        function information() {
-        alert("Visualized by Leighton Villanueva using Plotly.js. \nCholera data used for visualizations from: http://www.rtwilson.com/academic/. \nNaples Cholera data from: http://assets.cambridge. For more information on Cholera spread in Naples please visit: https://www.nejm.org/doi/full/10.1056/NEJM199610103351520.");
-        }
-        </script>
 
         <p style= "text-align: center;">ICS 484 Cholera Outbreak Data Visualizations</p>
         <div style="width:50%; height:500px; float: left">
-        <div id="c_plot" style="width:100%;height:600px;" ></div>
+            <div id="c_plot" style="width:100%;height:600px;" ></div>
         </div>
 
         <div style="width:50%; height:500px; float: left">
             <div id="line_plot" style="width:100%;height:600px;" ></div>
         </div>
-
     </div>
 
     
+    <div id="naples" style="width:100%; height:800px; float: left; background-color:rgb(255, 255, 255);">
 
-    <div style="width:100%; height:800px; float: left">
-        <div id="naple_line_plot" style="width:100%;height:600px;" ></div>
+        <div style="width:50%; height:800px; float: left">
+            <div id="naple_line_plot" style="width:100%;height:600px;" ></div>
+        </div>
+        <div style="width:100%; height:800px; float: left">
+            <div id="naple_bar" style="width:50%;height:600px;" ></div>
+        </div>
     </div>
-
+    
     <script>
    
     Plotly.d3.tsv("./choleraDeaths.tsv", function(err, rows) {
@@ -225,22 +230,31 @@
         align: "center",
         line: {width: 1, color: 'rgb(50, 50, 50)'},
         fill: {color: ['rgb(255, 255, 255)']},
-        font: {family: "Arial", size: 8, color: ["black"]}
+        font: {family: "Arial", size: 16, color: ["black"]}
         },
         cells: {
         values: naplesCellValues,
         align: ["center", "right", "right"],
         line: {color: "black", width: 1},
         fill: {color: ['rgb(102, 219, 240)','rgb(240, 102, 219)', 'rgb(220, 240, 100)', 'rgb(240, 157, 102)']},
-        font: {family: "Arial", size: 8, color: ["black"]}
+        font: {family: "Arial", size: 10, color: ["black"]}
         }
     }]
+
+
+    var naple_bar = [
+    {
+        x: naplesHeaderValues,
+        y: naplesCellValues,
+        type: 'bar'
+    }];
 
     var naple_layout = {
         title: "Naples Cholera"
     }
 
     Plotly.newPlot('naple_line_plot', naple_table, naple_layout);
+    Plotly.newPlot('naple_bar', naple_bar);
 
     });
 </script>
