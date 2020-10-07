@@ -317,7 +317,7 @@
 
 <script>
     
-    Plotly.d3.csv("./UKcensus1851.csv", function(err, rows) {
+    Plotly.d3.csv("./UKcensus1851.csv".then(function(err, rows) {
 
     function unpack(rows, key) {
         return rows.map(function(row) { return row[key]; });
