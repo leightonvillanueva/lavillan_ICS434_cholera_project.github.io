@@ -20,11 +20,11 @@
     <div id="thevizcolumn" style="width:100%; height:800px; float: left; background-color:rgb(255, 255, 255);">
 
         <p>Cholera</p>
-        <div style="width:35%; height:500px; float: left">
+        <div style="width:40%; height:500px; float: left">
         <div id="c_plot" style="width:100%;height:600px;" ></div>
         </div>
 
-        <div style="width:65%; height:500px; float: left">
+        <div style="width:60%; height:500px; float: left">
             <div id="line_plot" style="width:100%;height:600px;" ></div>
         </div>
 
@@ -58,12 +58,12 @@
     cellValues[3][0] = parseInt(cellValues[1][0]);
 
     for (j = 1; j < 42; j++) {
-        cellValues[3][j] = parseInt(cellValues[1][j]) + parseInt(cellValues[1][j-1]); 
+        cellValues[3][j] = parseInt(cellValues[1][j]) + parseInt(cellValues[3][j-1]); 
     }
 
     cellValues[4][0] = parseInt(cellValues[2][0]);
     for (k = 1; k < 42; k++) {
-        cellValues[4][k] = parseInt(cellValues[2][k]) + parseInt(cellValues[2][k-1]); 
+        cellValues[4][k] = parseInt(cellValues[2][k]) + parseInt(cellValues[4][k-1]); 
     }
 
     headerValues[3] = "Cumulative Attacks";
