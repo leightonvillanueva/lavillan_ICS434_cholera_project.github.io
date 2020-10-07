@@ -75,6 +75,8 @@
         cellValues[4][k] = parseInt(cellValues[2][k]) + parseInt(cellValues[4][k-1]); 
     }
 
+    headerValues[1] = "Number of Attacks per Day";
+    headerValues[2] = "Number of Deaths per Day";
     headerValues[3] = "Cumulative Attacks";
     headerValues[4] = "Cumulative Deaths";
 
@@ -122,7 +124,7 @@
         align: "center",
         line: {width: 1, color: 'rgb(50, 50, 50)'},
         fill: {color: ['rgb(255, 255, 255)']},
-        font: {family: "Arial", size: 8, color: ["black"]}
+        font: {family: "Arial", size: 10, color: ["black"]}
         },
         cells: {
         values: cellValues,
@@ -156,7 +158,7 @@
         x: cellValues[0],
         y: attacks_cumm,
         mode: 'lines+markers',
-        name: 'Total Attacks',
+        name: 'Cumulative Attacks',
         line: {color: '#b002a5'}
 
     }
@@ -165,7 +167,7 @@
         x: cellValues[0],
         y: deaths_cumm,
         mode: 'lines+markers',
-        name: 'Total Deaths',
+        name: 'Cumulative Deaths',
         line: {color: '#cf2917'}
 
     }
