@@ -84,7 +84,6 @@
     }
 
     cellValues[3][0] = parseInt(cellValues[1][0]);
-
     for (j = 1; j < 42; j++) {
         cellValues[3][j] = parseInt(cellValues[1][j]) + parseInt(cellValues[3][j-1]); 
     }
@@ -332,6 +331,13 @@
         ukHeaderValues[i] = ukHeaderValue;
         ukCellValue = unpack(rows, ukHeaderNames[i]);
         ukCellValues[i] = ukCellValue;
+    }
+
+    //Create 3rd column for totals
+    ukHeaderValues[3] = "Overall Total";
+    for (j = 0; j < 9; j++)
+    {
+        ukCellValues[3][j] = ukCellValues[1][j] + ukCellValues[2][j];
     }
 
     var uk_table = [{
