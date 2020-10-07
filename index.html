@@ -351,25 +351,27 @@
     //Pie Charts before modificiation
     var uk_male_pie = [{
         values: ukCellValues[1],
-        labels: ukHeaderNames,
+        labels: ukCellValues[0],
         type: 'pie'
     }];
 
     var uk_female_pie = [{
-        values: ukCellValues[1],
-        labels: ukHeaderNames,
+        values: ukCellValues[2],
+        labels: ukCellValues[0],
         type: 'pie'
     }];
 
     //Layouts
     var uk_male_pie_layout = {
         height: 400,
-        width: 500
+        width: 500,
+        showlegend: true
     };
 
     var uk_female_pie_layout = {
         height: 400,
-        width: 500
+        width: 500,
+        showlegend: true
     };
 
     Plotly.newPlot('uk_male_pie', uk_male_pie, uk_male_pie_layout);
@@ -427,7 +429,8 @@
 
     var uk_overall_pie_layout = {
         height: 400,
-        width: 500
+        width: 500,
+        showlegend: true
     };
 
     Plotly.newPlot('uk_table', uk_table, uk_table_layout);
