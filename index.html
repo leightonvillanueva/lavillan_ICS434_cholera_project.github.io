@@ -46,7 +46,7 @@
             <div id="naple_line_plot" style="width:100%;height:600px;" ></div>
         </div>
         <div style="width:100%; height:800px; float: left">
-            <div id="naple_bar" style="width:50%;height:600px;" ></div>
+            <div id="naple_bar_male" style="width:50%;height:600px;" ></div>
         </div>
     </div>
 
@@ -242,10 +242,10 @@
     }]
 
 
-    var naple_bar = [
+    var naple_bar_male = [
     {
-        x: [naplesHeaderNames[1], naplesHeaderNames[2]],
-        y: [naplesCellValues[1][0], naplesCellValues[2][0]],
+        x: naplesCellValues[0],
+        y: naplesCellValues[1],
         type: 'bar'
     }];
 
@@ -270,7 +270,7 @@
     };
 
     Plotly.newPlot('naple_line_plot', naple_table, naple_layout);
-    Plotly.newPlot('naple_bar', naple_bar, naple_bar_layout);
+    Plotly.newPlot('naple_bar_male', naple_bar_male, naple_bar_layout);
 
     });
 </script>
