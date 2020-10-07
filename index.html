@@ -39,15 +39,17 @@
         </div>
     </div>
 
+    <div style="width:50%; height:800px; float: left">
+        <div id="naple_table" style="width:100%;height:600px;" ></div>
+    </div>
     
     <div id="naples" style="width:100%; height:800px; float: left; background-color:rgb(255, 255, 255);">
 
         <div style="width:50%; height:800px; float: left">
-            <div id="naple_table" style="width:100%;height:600px;" ></div>
-        </div>
-
-        <div style="width:50%; height:800px; float: left">
             <div id="naple_bar_male" style="width:50%;height:600px;" ></div>
+        </div>
+        <div style="width:50%; height:800px; float: left">
+            <div id="naple_bar_female" style="width:50%;height:600px;" ></div>
         </div>
     </div>
 
@@ -250,18 +252,25 @@
         type: 'bar'
     }];
 
+    var naple_bar_female = [
+    {
+        x: naplesCellValues[0],
+        y: naplesCellValues[2],
+        type: 'bar'
+    }];
+
     var naple_table_layout = {
         title: "Naples Cholera"
     };
 
-    var naple_bar_layout = {
+    var naple_bar_male_layout = {
         title: 'Naples Cholera',
         font:{
             family: 'Raleway, sans-serif'
         },
         showlegend: false,
         xaxis: {
-            tickangle: -45, title:"Males Ages"
+            tickangle: -45, title:"Male's Ages"
         },
         yaxis: {
             zeroline: false,
@@ -270,8 +279,27 @@
         bargap :0.05
     };
 
+    var naple_bar_female_layout = {
+        title: 'Naples Cholera',
+        font:{
+            family: 'Raleway, sans-serif'
+        },
+        showlegend: false,
+        xaxis: {
+            tickangle: -45, 
+            title:"Female's Ages"
+        },
+        yaxis: {
+            zeroline: false,
+            gridwidth: 2, 
+            title: "Deaths"
+        },
+        bargap :0.05
+    };
+
     Plotly.newPlot('naple_table', naple_table, naple_table_layout);
-    Plotly.newPlot('naple_bar_male', naple_bar_male, naple_bar_layout);
+    Plotly.newPlot('naple_bar_male', naple_bar_male, naple_bar_male_layout);
+    Plotly.newPlot('naple_bar_female', naple_bar_female, naple_bar_female_layout);
 
     });
 </script>
