@@ -512,6 +512,28 @@
     });
 </script>
 
+<script>
+    Plotly.d3.csv("./choleraDeathLocations.csv", function(err, rows) {
+        Plotly.d3.csv("./choleraPumpLocations.csv", function(err, rows2) {
+            function unpack(rows, key) {
+                return rows.map(function(row) { return row[key]; });
+                }
+            
+            var choleraHeaderNames= Plotly.d3.keys(rows[0]);
+            var choleraPumpHeaderNames= Plotly.d3.keys(rows2[0]);
+        
+            var choleraHeaderValues = [];
+            var choleraCellValues = [];
+            for (i = 0; i < 3; i++) {
+                choleraHeaderValue = [choleraHeaderNames[i]];
+                choleraHeaderValues[i] = choleraHeaderValue;
+                choleraCellValue = unpack(rows, choleraHeaderNames[i]);
+                choleraCellValues[i] = choleraCellValue;
+            }
+        });
+    });
+</script>
+
 
 </body>
 </html>
