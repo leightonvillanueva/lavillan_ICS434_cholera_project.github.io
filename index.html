@@ -90,6 +90,8 @@
         </div>
     </div>
 
+    <div id="mapid" style="height: 300px;"></div>
+
     <script>
     Plotly.d3.tsv("./choleraDeaths.tsv", function(err, rows) {
 
@@ -517,7 +519,7 @@
         Plotly.d3.csv("./choleraPumpLocations.csv", function(err, rows2) {
             function unpack(rows, key) {
                 return rows.map(function(row) { return row[key]; });
-                }
+            }
             
             var choleraHeaderNames= Plotly.d3.keys(rows[0]);
             var choleraPumpHeaderNames= Plotly.d3.keys(rows2[0]);
@@ -530,8 +532,21 @@
                 choleraCellValue = unpack(rows, choleraHeaderNames[i]);
                 choleraCellValues[i] = choleraCellValue;
             }
+
+            var choleraPumpHeaderValues = [];
+            var choleraPumpCellValues = [];
+            for (i = 0; i < 3; i++) {
+                choleraPumpHeaderValue = [choleraPumpHeaderNames[i]];
+                choleraPumpHeaderValues[i] = choleraPumpHeaderValue;
+                choleraPumpCellValue = unpack(rows, choleraPumpHeaderNames[i]);
+                choleraPumpCellValues[i] = choleraPumpCellValue;
+            }
         });
     });
+</script>
+
+<script>
+    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
 </script>
 
 
