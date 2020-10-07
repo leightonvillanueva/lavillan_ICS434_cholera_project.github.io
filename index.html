@@ -344,8 +344,11 @@
     running_total_female = 0
     for (k = 0; k < 9; k++)
     {
-        running_total_female += parseInt(ukCellValues[2][j]);
+        running_total_female += parseInt(ukCellValues[2][k]);
     }
+
+    ukCellValues[1][9] = running_total_male;
+    ukCellValues[2][9] = running_total_female;
 
     var uk_table = [{
         type: 'table',
