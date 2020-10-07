@@ -17,7 +17,16 @@
 
 <body>
 
+    
+
     <div id="thevizcolumn" style="width:100%; height:800px; float: left; background-color:rgb(255, 255, 255);">
+        <button onclick="information()">Information</button>
+
+        <script>
+        function information() {
+        alert("Visualized by Leighton Villanueva using Plotly.js. \nCholera data used for visualizations from: http://www.rtwilson.com/academic/. \nNaples Cholera data from: http://assets.cambridge. For more information on Cholera spread in Naples please visit: https://www.nejm.org/doi/full/10.1056/NEJM199610103351520.");
+        }
+        </script>
 
         <p style= "text-align: center;">ICS 484 Cholera Outbreak Data Visualizations</p>
         <div style="width:50%; height:500px; float: left">
@@ -234,13 +243,7 @@
     });
 </script>
 
-<button onclick="information()">Information</button>
 
-<script>
-function information() {
-  alert("Visualized by Leighton Villanueva using Plotly.js. \nCholera data used for visualizations from: http://www.rtwilson.com/academic/. \nNaples Cholera data from: http://assets.cambridge. For more information on Cholera spread in Naples please visit: https://www.nejm.org/doi/full/10.1056/NEJM199610103351520.");
-}
-</script>
 
 </body>
 </html>
