@@ -383,7 +383,10 @@
     {
         x: ukCellValues[0],
         y: ukCellValues[2],
-        type: 'bar'
+        type: 'bar',
+        marker: {
+            color: '#FFB6C1'
+        }
     }];
 
     //Layouts
@@ -410,7 +413,7 @@
         font:{
             family: 'Raleway, sans-serif'
         },
-        showlegend: true,
+        showlegend: false,
         xaxis: {
             tickangle: -45, title:"Male's Ages"
         },
@@ -425,7 +428,7 @@
         font:{
             family: 'Raleway, sans-serif'
         },
-        showlegend: true,
+        showlegend: false,
         xaxis: {
             tickangle: -45, title:"Female's Ages"
         },
