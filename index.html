@@ -56,6 +56,21 @@
         </div>
     </div>
 
+    <div id="uk" style="width:100%; height:800px; float: left; background-color:rgb(255, 255, 255);">
+
+        <div style="width:50%; height:800px; float: left">
+            <div id="uk_table" style="width:100%;height:600px;" ></div>
+        </div>
+
+        <!-- <div style="width:25%; height:800px; float: left">
+            <div id="naple_bar_male" style="width:100%;height:600px;" ></div>
+        </div>
+
+        <div style="width:25%; height:800px; float: left">
+            <div id="naple_bar_female" style="width:100%;height:600px;" ></div>
+        </div> -->
+    </div>
+
     <script>
    
     Plotly.d3.tsv("./choleraDeaths.tsv", function(err, rows) {
@@ -345,6 +360,12 @@
         font: {family: "Arial", size: 10, color: ["black"]}
         }
     }]
+
+    var uk_table_layout = {
+        title: "UK Census Data"
+    };
+
+    Plotly.newPlot('uk_table', uk_table, uk_table_layout);
 
     });
 </script>
