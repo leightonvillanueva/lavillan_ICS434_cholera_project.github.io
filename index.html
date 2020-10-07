@@ -13,6 +13,10 @@
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
 
+    <style>
+        #mapid {position: absolute; top: 0; bottom: 0; left: 0; right: 0;}
+    </style>
+
 </head>
 
 <body>
@@ -535,7 +539,7 @@
 
             var choleraPumpHeaderValues = [];
             var choleraPumpCellValues = [];
-            for (i = 0; i < 3; i++) {
+            for (i = 0; i < 2; i++) {
                 choleraPumpHeaderValue = [choleraPumpHeaderNames[i]];
                 choleraPumpHeaderValues[i] = choleraPumpHeaderValue;
                 choleraPumpCellValue = unpack(rows, choleraPumpHeaderNames[i]);
@@ -546,7 +550,12 @@
 </script>
 
 <script>
-    var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+    var mymap = L.map('mapid').setView([51.5, -0.09], 1);
+    L.tileLayer('https://api.maptiler.com/maps/basic/{z}/{x}/{y}.png?key=AYPJtt40J7PjAxpTFLqp', {
+        attrribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
+    }).addTo(map);
+
+    var marker = L.marker([51.5,-0.09]).addTo(map);
 </script>
 
 
