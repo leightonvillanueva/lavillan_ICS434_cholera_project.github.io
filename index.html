@@ -333,11 +333,18 @@
         ukCellValues[i] = ukCellValue;
     }
 
-    //Create 3rd column for totals
-    ukHeaderValues[3] = "Overall Total";
+    //Create cumulative total for males
+    running_total_male = 0
     for (j = 0; j < 9; j++)
     {
-        ukCellValues[3][j] = parseInt(ukCellValues[1][j]) + parseInt(ukCellValues[2][j]);
+        running_total_male += parseInt(ukCellValues[1][j]);
+    }
+
+    //Create cumulative total for females
+    running_total_female = 0
+    for (k = 0; k < 9; k++)
+    {
+        running_total_female += parseInt(ukCellValues[2][j]);
     }
 
     var uk_table = [{
