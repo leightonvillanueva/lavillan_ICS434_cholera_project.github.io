@@ -49,7 +49,7 @@
             <div id="naple_bar" style="width:50%;height:600px;" ></div>
         </div>
     </div>
-    
+
     <script>
    
     Plotly.d3.tsv("./choleraDeaths.tsv", function(err, rows) {
@@ -244,8 +244,8 @@
 
     var naple_bar = [
     {
-        x: naplesHeaderValues,
-        y: naplesCellValues,
+        x: [naplesHeaderNames[1], naplesHeaderNames[2]],
+        y: [naplesCellValues[1], naplesCellValues[2]],
         type: 'bar'
     }];
 
