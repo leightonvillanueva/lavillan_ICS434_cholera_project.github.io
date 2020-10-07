@@ -365,13 +365,17 @@
     var uk_male_pie_layout = {
         height: 400,
         width: 500,
-        showlegend: true
+        showlegend: true,
+        textinfo: "label+percent",
+        insidetextorientation: "radial"
     };
 
     var uk_female_pie_layout = {
         height: 400,
         width: 500,
-        showlegend: true
+        showlegend: true,
+        textinfo: "label+percent",
+        insidetextorientation: "radial"
     };
 
     Plotly.newPlot('uk_male_pie', uk_male_pie, uk_male_pie_layout);
@@ -431,7 +435,9 @@
         height: 400,
         width: 500,
         showlegend: true,
-        title: 'Overall Population'
+        title: 'Overall Population',
+        textinfo: "label+percent",
+        insidetextorientation: "radial"
     };
 
     Plotly.newPlot('uk_table', uk_table, uk_table_layout);
