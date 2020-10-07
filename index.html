@@ -417,7 +417,7 @@
 
     var uk_overall_pie = [{
         values: [ukCellValues[1][9], ukCellValues[2][9]],
-        labels: ukHeaderNames,
+        labels: [ukHeaderNames[1], ukHeaderNames[2]],
         type: 'pie'
     }];
 
@@ -430,7 +430,8 @@
     var uk_overall_pie_layout = {
         height: 400,
         width: 500,
-        showlegend: true
+        showlegend: true,
+        title: 'Overall Population'
     };
 
     Plotly.newPlot('uk_table', uk_table, uk_table_layout);
