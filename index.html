@@ -307,6 +307,47 @@
     });
 </script>
 
+<script>
+    
+    Plotly.d3.csv("./UKcensus1851.csv", function(err, rows) {
+
+    function unpack(rows, key) {
+        return rows.map(function(row) { return row[key]; });
+        }
+
+    var ukCensus = Plotly.d3.keys(rows[0]);
+
+    var ukHeaderValues = [];
+    var ukCellValues = [];
+    for (i = 0; i < 3; i++) {
+        ukHeaderValue = [ukHeaderNames[i]];
+        ukHeaderValues[i] = ukHeaderValue;
+        ukCellValue = unpack(rows, ukHeaderNames[i]);
+        ukCellValues[i] = ukCellValue;
+    }
+
+    var uk_table = [{
+        type: 'table',
+        columnorder: [0,1,2,3],
+        columnwidth: [300,300,300,300],
+        header: {
+        values: ukHeaderValues,
+        align: "center",
+        line: {width: 1, color: 'rgb(50, 50, 50)'},
+        fill: {color: ['rgb(255, 255, 255)']},
+        font: {family: "Arial", size: 16, color: ["black"]}
+        },
+        cells: {
+        values: ukCellValues,
+        align: ["center", "right", "right"],
+        line: {color: "black", width: 1},
+        fill: {color: ['rgb(255, 255, 255)', '#5272f0', '#C8102E']},
+        font: {family: "Arial", size: 10, color: ["black"]}
+        }
+    }]
+
+    });
+</script>
 
 
 </body>
