@@ -245,16 +245,32 @@
     var naple_bar = [
     {
         x: [naplesHeaderNames[1], naplesHeaderNames[2]],
-        y: [naplesCellValues[1], naplesCellValues[2]],
+        y: [naplesCellValues[1][0], naplesCellValues[2][0]],
         type: 'bar'
     }];
 
-    var naple_layout = {
+    var naple_table_layout = {
         title: "Naples Cholera"
     }
 
+    var naple_bar_layout = {
+        title: 'Naples Cholera',
+        font:{
+            family: 'Raleway, sans-serif'
+        },
+        showlegend: false,
+        xaxis: {
+            tickangle: -45
+        },
+        yaxis: {
+            zeroline: false,
+            gridwidth: 2
+        },
+        bargap :0.05
+    };
+
     Plotly.newPlot('naple_line_plot', naple_table, naple_layout);
-    Plotly.newPlot('naple_bar', naple_bar);
+    Plotly.newPlot('naple_bar', naple_bar, naple_bar_layout);
 
     });
 </script>
