@@ -337,7 +337,7 @@
     ukHeaderValues[3] = "Overall Total";
     for (j = 0; j < 9; j++)
     {
-        ukCellValues[3][j] = ukCellValues[1][j] + ukCellValues[2][j];
+        ukCellValues[3][j] = parseInt(ukCellValues[1][j]) + parseInt(ukCellValues[2][j]);
     }
 
     var uk_table = [{
