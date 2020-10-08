@@ -536,11 +536,11 @@
 
             var choleraPumpHeaderValues = [];
             var choleraPumpCellValues = [];
-            for (i = 0; i < 2; i++) {
-                choleraPumpHeaderValue = [choleraPumpHeaderNames[i]];
-                choleraPumpHeaderValues[i] = choleraPumpHeaderValue;
-                choleraPumpCellValue = unpack(rows, choleraPumpHeaderNames[i]);
-                choleraPumpCellValues[i] = choleraPumpCellValue;
+            for (j = 0; j < 2; j++) {
+                choleraPumpHeaderValue = [choleraPumpHeaderNames[j]];
+                choleraPumpHeaderValues[j] = choleraPumpHeaderValue;
+                choleraPumpCellValue = unpack(rows, choleraPumpHeaderNames[j]);
+                choleraPumpCellValues[j] = choleraPumpCellValue;
             }
         
         var mymap = L.map('mapid').setView([0, 0], 1);
@@ -548,13 +548,13 @@
             attrribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         }).addTo(mymap);
 
-        for (i = 1; i > 7; i++) {
-            var marker = L.marker([choleraPumpCellValues[1][i], choleraPumpCellValues[0][i]])
+        for (k = 1; k > 8; k++) {
+            var marker = L.marker([choleraPumpCellValues[1][k], choleraPumpCellValues[0][k]])
             .addTo(mymap);
         }
 
         // var marker = L.marker([choleraPumpCellValues[1][0], choleraCellValues[0][1]]).addTo(mymap);
-        console.log(choleraPumpCellValues[1][0], choleraPumpCellValues[0][1]);
+        console.log(choleraPumpCellValues[1][0], choleraPumpCellValues[0][0]);
 
 
         var latlng = L.latLng(51.5, -0.09);
