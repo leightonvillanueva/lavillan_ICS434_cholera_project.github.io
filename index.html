@@ -553,11 +553,9 @@
                 var marker = L.marker([choleraPumpCellValues[1][k], choleraPumpCellValues[0][k]]).addTo(mymap);
             }
 
-            // var marker = L.marker([choleraPumpCellValues[1][0], choleraCellValues[0][1]]).addTo(mymap);
-            console.log(choleraPumpCellValues[1][0], choleraPumpCellValues[0][0]);
-            // var latlng = L.latLng();
-            // mymap.setView(latlng, 12);
-        
+            for (var i = 0; i < 251; i++) {
+			    var marker = L.marker([choleraCellValues[i][1],choleraCellValues[i][2]]).bindPopup(choleraCellValues[i][0]).addTo(map);
+		    }
         });
 
         
