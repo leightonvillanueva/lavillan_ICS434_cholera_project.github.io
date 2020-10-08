@@ -549,19 +549,26 @@
                 attrribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
             }).addTo(mymap);
 
-            var myIcon = L.icon({
+            var skullicon = L.icon({
                 iconUrl: 'skull.png',
                 iconSize:  [20, 15],
                 iconAnchor: [22, 94],
                 popupAnchor: [-3, -76]
             });
 
+            var pumpicon = L.icon({
+                iconUrl: 'water-pump.png',
+                iconSize:  [20, 15],
+                iconAnchor: [22, 94],
+                popupAnchor: [-3, -76]
+            });
+
             for (k = 0; k < 8; k++) {
-                var marker = L.marker([choleraPumpCellValues[1][k], choleraPumpCellValues[0][k]]).addTo(mymap);
+                var marker = L.marker([choleraPumpCellValues[1][k], choleraPumpCellValues[0][k]], {icon: pumpicon}).addTo(mymap);
             }
 
             for (var l = 0; l < 250; l++) {
-			    var marker = L.marker([choleraCellValues[2][l],choleraCellValues[1][l]], {icon: myIcon}).bindPopup(choleraCellValues[0][l]).addTo(mymap);
+			    var marker = L.marker([choleraCellValues[2][l],choleraCellValues[1][l]], {icon: skullicon}).bindPopup(choleraCellValues[0][l]).addTo(mymap);
 		    }
         });
 
@@ -572,9 +579,7 @@
 
 </script>
 
-<script>
-    
-</script>
+
 
 
 </body>
