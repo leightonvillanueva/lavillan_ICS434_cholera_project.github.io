@@ -551,11 +551,8 @@
 
             var myIcon = L.icon({
                 iconUrl: 'skull.png',
-                iconSize: [38, 95],
                 iconAnchor: [22, 94],
-                popupAnchor: [-3, -76],
-                shadowSize: [68, 95],
-                shadowAnchor: [22, 94]
+                popupAnchor: [-3, -76]
             });
 
             for (k = 0; k < 8; k++) {
@@ -563,7 +560,7 @@
             }
 
             for (var l = 0; l < 251; l++) {
-			    var marker = L.marker([choleraCellValues[1][l],choleraCellValues[2][l]], {icon: myIcon}).bindPopup(choleraCellValues[0][l]).addTo(mymap);
+			    var marker = L.marker([choleraCellValues[2][l],choleraCellValues[1][l]], {icon: myIcon}).bindPopup(choleraCellValues[0][l]).addTo(mymap);
 		    }
         });
 
