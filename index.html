@@ -549,12 +549,21 @@
                 attrribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
             }).addTo(mymap);
 
+            var myIcon = L.icon({
+                iconUrl: 'skull.png',
+                iconSize: [38, 95],
+                iconAnchor: [22, 94],
+                popupAnchor: [-3, -76],
+                shadowSize: [68, 95],
+                shadowAnchor: [22, 94]
+            });
+
             for (k = 0; k < 8; k++) {
                 var marker = L.marker([choleraPumpCellValues[1][k], choleraPumpCellValues[0][k]]).addTo(mymap);
             }
 
             for (var i = 0; i < 251; i++) {
-			    var marker = L.marker([choleraCellValues[i][1],choleraCellValues[i][2]]).bindPopup(choleraCellValues[i][0]).addTo(map);
+			    var marker = L.marker([choleraCellValues[i][1],choleraCellValues[i][2]], {icon: myIcon}).bindPopup(choleraCellValues[i][0]).addTo(map);
 		    }
         });
 
