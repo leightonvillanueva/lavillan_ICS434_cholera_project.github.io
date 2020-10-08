@@ -548,8 +548,8 @@
             attrribution: '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>'
         }).addTo(mymap);
 
-        for (i = 0; i > 8; i++) {
-            var marker = L.marker([choleraPumpCellValues[1][i], choleraCellValues[0][i]]).addTo(mymap);
+        for (i = 1; i > 8; i++) {
+            var marker = L.marker([choleraPumpCellValues[0][i], choleraCellValues[1][i]]).addTo(mymap);
         }
 
         var latlng = L.latLng(51.5, -0.09);
