@@ -560,7 +560,7 @@
                 var marker = L.marker([choleraPumpCellValues[1][k], choleraPumpCellValues[0][k]]).addTo(mymap);
             }
 
-            for (var l = 0; l < 251; l++) {
+            for (var l = 0; l < 250; l++) {
 			    var marker = L.marker([choleraCellValues[2][l],choleraCellValues[1][l]], {icon: myIcon}).bindPopup(choleraCellValues[0][l]).addTo(mymap);
 		    }
         });
