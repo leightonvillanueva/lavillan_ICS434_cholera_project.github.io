@@ -550,8 +550,12 @@
 
         for (i = 1; i > 8; i++) {
             var marker;
-            marker = L.marker([choleraPumpCellValues[1][i], choleraCellValues[0][i]]).addTo(mymap);
+            marker = L.marker([choleraPumpCellValues[1][i], choleraPumpCellValues[0][i]]).addTo(mymap);
         }
+
+        // var marker = L.marker([choleraPumpCellValues[1][0], choleraCellValues[0][1]]).addTo(mymap);
+        console.log(choleraPumpCellValues[1][0], choleraPumpCellValues[0][1]);
+
 
         var latlng = L.latLng(51.5, -0.09);
         mymap.setView(latlng, 12);
